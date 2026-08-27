@@ -1,0 +1,49 @@
+{
+    "name": "liberusoftware/ecommerce-recommendations-filament",
+    "description": "The operator's view of a recommender: whether a signal source is bound, when each strategy last generated and what it asserted and withheld, which affinities stand and which were superseded, and why any one placement came out the way it did.",
+    "type": "liberu-module",
+    "license": "MIT",
+    "version": "0.1.0",
+    "keywords": ["laravel", "filament", "ecommerce", "recommendations", "liberu"],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/liberusoftware/module-ecommerce-recommendations"
+        }
+    ],
+    "require": {
+        "php": "^8.5",
+        "filament/filament": "^5.4",
+        "illuminate/database": "^13.0",
+        "illuminate/support": "^13.0",
+        "liberusoftware/ecommerce-recommendations": "^0.1"
+    },
+    "require-dev": {
+        "liberusoftware/package-testbench": "^1.7",
+        "livewire/livewire": "^4.2",
+        "pestphp/pest": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Liberu\\Ecommerce\\Recommendations\\Filament\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Liberu\\Ecommerce\\Recommendations\\Filament\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "liberu": {
+            "name": "ecommerce-recommendations-filament"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
