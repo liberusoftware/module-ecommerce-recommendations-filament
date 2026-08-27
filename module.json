@@ -1,0 +1,42 @@
+{
+    "name": "ecommerce-recommendations-filament",
+    "version": "0.1.0",
+    "description": "The operator's view of a recommender: whether a signal source is bound, when each strategy last generated and what it asserted and withheld, which claims stand and which were superseded, and why any one placement came out the way it did.",
+    "category": "presentation",
+    "provider": "Liberu\\Ecommerce\\Recommendations\\Filament\\RecommendationsFilamentServiceProvider",
+    "requires": {
+        "packages": {
+            "liberusoftware/ecommerce-recommendations": "^0.1"
+        }
+    },
+    "presentation": {
+        "filament": {
+            "app": [
+                "Liberu\\Ecommerce\\Recommendations\\Filament\\RecommendationsPlugin"
+            ]
+        }
+    },
+    "features": [
+        "A readiness screen names each of the three silences separately: no signal source bound, no successful generation run, and nothing asking for a placement",
+        "Every unbound seam is stated on the screen with what it removes, because with nothing bound the module is inert rather than wrong and the host could not see the difference",
+        "No signal recorded with a source bound and no signal recorded with nothing bound are two different sentences",
+        "Every strategy is listed with when it last succeeded and what that run asserted, retracted and withheld, so a strategy that has never run is visible next to one that runs nightly",
+        "A failed run is a row carrying its reason by name, where the host's command caught the exception, printed it and returned FAILURE into a console nobody read",
+        "Claims withheld below the anonymity floor are counted on every run, so an operator sees the floor working rather than inferring it from an empty table",
+        "Standing and superseded claims are counted side by side, because a store whose claims all fell away has a different problem from one that never had any",
+        "There is no delete anywhere in this package: an affinity's history is append-only in the domain, so a delete would fatal rather than refuse",
+        "A claim is retracted by being withdrawn, which supersedes it and writes the row saying when it stopped being true",
+        "A claim that is already superseded is not offered the withdrawal, and asking for one anyway is refused rather than done",
+        "Every write re-reads the claim scoped to the panel's merchant, so a run that superseded it while the page sat open refuses rather than transitions a stale copy",
+        "Every placement carries why it is what it is, and all fourteen refusal reasons the domain publishes have a sentence",
+        "Every candidate a placement considered is on the screen, shown with its position or removed with the exclusion that removed it, so asking for ten and getting four has an answer",
+        "A raw score and a per-strategy normalised score are shown apart, because a raw score is comparable only within its own strategy",
+        "An anchorless claim renders as store-wide rather than as a blank, because popularity is about the store and not about a product to sit beside",
+        "Curated is absent from the generation strategy select, because the domain refuses it and a control that writes a failed run offers a move that cannot be made",
+        "Every state, strategy, refusal and exclusion on every screen comes from a domain backed enum, never from a free-text field or an unconstrained select",
+        "A curated claim's score is bounded at nought and one on the form as well as on the model, because the host stored a frequency divided by an assumed maximum into a column whose ceiling was 9.9999",
+        "No shopper reference appears on any listing, and the record screen renders an absent one as nobody named rather than as a blank",
+        "Whether the catalogue and the cart were read is stated on every placement, because an unapplied exclusion is a fact about the answer rather than an absence of one",
+        "Another merchant's claim, run or placement and one that does not exist raise the same exception on every screen"
+    ]
+}
